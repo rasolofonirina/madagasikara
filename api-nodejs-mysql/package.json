@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@prisma/client": "^3.10.0",
+    "body-parser": "^1.19.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^5.0.2",
+    "nocache": "^3.0.1",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.10.0",
+    "winston": "^3.6.0"
+  },
+  "name": "api-nodejs-mysql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Eric Rasolofonirina",
+  "license": "MIT License",
+  "description": "This is a REST API for fokontany, kaomina, distrika, faritra and faritany in Madagasikara made with Node.js and MySQL."
+}

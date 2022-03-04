@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model distrika {
+  id         Int    @id @default(autoincrement())
+  id_faritra Int
+  anarana    String @db.VarChar(255)
+}
+
+model faritany {
+  id      Int    @id @default(autoincrement())
+  anarana String @db.VarChar(255)
+}
+
+model faritra {
+  id          Int    @id @default(autoincrement())
+  id_faritany Int
+  anarana     String @db.VarChar(255)
+}
+
+model fokontany {
+  id      Int    @id @default(autoincrement())
+  anarana String @db.VarChar(100)
+  kaomina String @db.VarChar(100)
+}
+
+model kaomina {
+  id          Int    @id @default(autoincrement())
+  id_distrika Int
+  anarana     String @db.VarChar(255)
+}
