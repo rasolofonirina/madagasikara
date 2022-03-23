@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 // Get all faritany
 router.get('/', async (req, res) => {
-    const faritany = await prisma.faritany.findMany({});
+    const faritany = await prisma.faritany.findMany({})
 
     res.status(200).send({
         status: 200,
@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
 // Get faritany with specified id
 router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
+
     const faritany = await prisma.faritany.findUnique({
         where: {
             id: parseInt(id)
@@ -41,7 +42,8 @@ router.get('/:id', async (req, res) => {
 
 // Get faritany by name
 router.get('/name/:name', async (req, res) => {
-    const { name } = req.params;
+    const { name } = req.params
+
     const faritany = await prisma.faritany.findMany({
         where: {
             anarana: name
@@ -93,6 +95,7 @@ router.post('/add', async (req, res) => {
 // Edit faritany
 router.put('/edit/:id', async (req, res) => {
     const { id } = req.params
+    
     const {
         anarana
     } = req.body
@@ -123,7 +126,7 @@ router.put('/edit/:id', async (req, res) => {
 
 // Delete faritany
 router.delete('/delete/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
 
     const faritanyExist = await prisma.faritany.findOne({
         where: {

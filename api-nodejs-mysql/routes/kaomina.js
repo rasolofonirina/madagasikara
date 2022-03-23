@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 // Get all kaomina
 router.get('/', async (req, res) => {
-    const kaomina = await prisma.kaomina.findMany({});
+    const kaomina = await prisma.kaomina.findMany({})
 
     res.status(200).send({
         status: 200,
@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
 // Get kaomina with specified id
 router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
+
     const kaomina = await prisma.kaomina.findUnique({
         where: {
             id: parseInt(id)
@@ -41,7 +42,8 @@ router.get('/:id', async (req, res) => {
 
 // Get kaomina by name
 router.get('/name/:name', async (req, res) => {
-    const { name } = req.params;
+    const { name } = req.params
+
     const kaomina = await prisma.kaomina.findMany({
         where: {
             anarana: name
@@ -95,6 +97,7 @@ router.post('/add', async (req, res) => {
 // Edit kaomina
 router.put('/edit/:id', async (req, res) => {
     const { id } = req.params
+    
     const {
         id_distrika,
         anarana
@@ -127,7 +130,7 @@ router.put('/edit/:id', async (req, res) => {
 
 // Delete kaomina
 router.delete('/delete/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
 
     const kaominaExist = await prisma.kaomina.findOne({
         where: {

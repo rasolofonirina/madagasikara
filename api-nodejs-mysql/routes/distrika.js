@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 // Get all distrika
 router.get('/', async (req, res) => {
-    const distrika = await prisma.distrika.findMany({});
+    const distrika = await prisma.distrika.findMany({})
 
     res.status(200).send({
         status: 200,
@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
 // Get distrika with specified id
 router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
+
     const distrika = await prisma.distrika.findUnique({
         where: {
             id: parseInt(id)
@@ -41,7 +42,8 @@ router.get('/:id', async (req, res) => {
 
 // Get distrika by name
 router.get('/name/:name', async (req, res) => {
-    const { name } = req.params;
+    const { name } = req.params
+
     const distrika = await prisma.distrika.findMany({
         where: {
             anarana: name
@@ -95,6 +97,7 @@ router.post('/add', async (req, res) => {
 // Edit distrika
 router.put('/edit/:id', async (req, res) => {
     const { id } = req.params
+    
     const {
         id_faritra,
         anarana
@@ -127,7 +130,7 @@ router.put('/edit/:id', async (req, res) => {
 
 // Delete distrika
 router.delete('/delete/:id', async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
 
     const distrikaExist = await prisma.distrika.findOne({
         where: {
