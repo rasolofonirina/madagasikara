@@ -1,5 +1,26 @@
-<ol>
-    <li *ngFor="let kmn of kaomina">
-        Kaomina : {{ kmn.anarana }}
-    </li>
-</ol>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="kaomina">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="id_distrika">
+            <th mat-header-cell *matHeaderCellDef>ID Distrika</th>
+            <td mat-cell *matCellDef="let element">{{ element.id_distrika }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="anarana">
+            <th mat-header-cell *matHeaderCellDef>Kaomina</th>
+            <td mat-cell *matCellDef="let element">{{ element.anarana }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+    <mat-paginator
+        [pageSizeOptions]="[10, 20, 50]"
+        showFirstLastButtons
+        aria-label="Select page">
+    </mat-paginator>
+</div>

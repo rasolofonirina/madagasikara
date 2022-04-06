@@ -1,5 +1,16 @@
-<ol>
-    <li *ngFor="let fr of faritany">
-        Faritany : {{ fr.anarana }}
-    </li>
-</ol>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="faritany">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="anarana">
+            <th mat-header-cell *matHeaderCellDef>Faritany</th>
+            <td mat-cell *matCellDef="let element">{{ element.anarana }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+</div>

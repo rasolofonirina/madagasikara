@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { KaominaService } from '../services/kaomina.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'kaomina',
@@ -8,14 +10,18 @@ import { KaominaService } from '../services/kaomina.service';
 })
 export class KaominaComponent implements OnInit {
   kaomina: any;
+  columnsToDisplay = ['id', 'id_distrika', 'anarana'];
 
   constructor(private kaominaService: KaominaService) { }
+
+  @ViewChild(MatPaginator) paginator: any;
 
   ngOnInit(): void {
     this.kaominaService.getAllKaomina()
       .subscribe(
         (response) => {
-          this.kaomina = response.result;
+          this.kaomina = new MatTableDataSource(response.result);
+          this.kaomina.paginator = this.paginator;
         },
         (error) => {
           console.log('Error :', error);

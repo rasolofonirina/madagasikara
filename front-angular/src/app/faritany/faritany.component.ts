@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FaritanyService } from '../services/faritany.service';
 
 @Component({
-  selector: 'app-faritany',
+  selector: 'faritany',
   templateUrl: './faritany.component.html',
   styleUrls: ['./faritany.component.css']
 })
 export class FaritanyComponent implements OnInit {
   faritany: any;
+  columnsToDisplay = ['id', 'anarana'];
 
   constructor(private faritanyService: FaritanyService) { }
 

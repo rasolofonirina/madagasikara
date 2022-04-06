@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FokontanyService } from '../services/fokontany.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'fokontany',
@@ -8,14 +10,18 @@ import { FokontanyService } from '../services/fokontany.service';
 })
 export class FokontanyComponent implements OnInit {
   fokontany: any;
+  columnsToDisplay = ['id', 'anarana', 'kaomina'];
 
   constructor(private fokontanyService: FokontanyService) { }
+
+  @ViewChild(MatPaginator) paginator: any;
 
   ngOnInit(): void {
     this.fokontanyService.getAllFokontany()
       .subscribe(
         (response) => {
-          this.fokontany = response.result;
+          this.fokontany = new MatTableDataSource(response.result);
+          this.fokontany.paginator = this.paginator;
         },
         (error) => {
           console.log('Error :', error);
