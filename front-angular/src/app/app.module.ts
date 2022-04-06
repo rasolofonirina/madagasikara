@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FokontanyComponent } from './fokontany/fokontany.component';
 import { HomeComponent } from './home/home.component';
+import { KaominaComponent } from './kaomina/kaomina.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FokontanyComponent,
-    HomeComponent
+    HomeComponent,
+    KaominaComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'fokontany', component: FokontanyComponent }
+      { path: 'fokontany', component: FokontanyComponent },
+      { path: 'kaomina', component: KaominaComponent },
     ])
   ],
   providers: [],
