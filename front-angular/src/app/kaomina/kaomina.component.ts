@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KaominaService } from '../services/kaomina.service';
 
 @Component({
-  selector: 'app-kaomina',
+  selector: 'kaomina',
   templateUrl: './kaomina.component.html',
   styleUrls: ['./kaomina.component.css']
 })

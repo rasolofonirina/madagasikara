@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FokontanyComponent } from './fokontany/fokontany.component';
 import { HomeComponent } from './home/home.component';
 import { KaominaComponent } from './kaomina/kaomina.component';
+import { DistrikaComponent } from './distrika/distrika.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FokontanyComponent,
     HomeComponent,
-    KaominaComponent
+    KaominaComponent,
+    DistrikaComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { KaominaComponent } from './kaomina/kaomina.component';
       { path: '', component: HomeComponent },
       { path: 'fokontany', component: FokontanyComponent },
       { path: 'kaomina', component: KaominaComponent },
+      { path: 'distrika', component: DistrikaComponent },
     ])
   ],
   providers: [],
