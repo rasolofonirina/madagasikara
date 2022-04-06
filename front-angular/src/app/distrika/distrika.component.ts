@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DistrikaService } from '../services/distrika.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'distrika',
@@ -15,6 +16,7 @@ export class DistrikaComponent implements OnInit {
   constructor(private distrikaService: DistrikaService) { }
 
   @ViewChild(MatPaginator) paginator: any;
+  @ViewChild(MatSort) sort: any;
 
   ngOnInit(): void {
     this.distrikaService.getAllDistrika()
@@ -22,6 +24,7 @@ export class DistrikaComponent implements OnInit {
         (response) => {
           this.distrika = new MatTableDataSource(response.result);
           this.distrika.paginator = this.paginator;
+          this.distrika.sort = this.sort;
         },
         (error) => {
           console.log('Error :', error);
