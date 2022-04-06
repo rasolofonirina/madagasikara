@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { KaominaComponent } from './kaomina/kaomina.component';
 import { DistrikaComponent } from './distrika/distrika.component';
 import { FaritraComponent } from './faritra/faritra.component';
+import { FaritanyComponent } from './faritany/faritany.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FaritraComponent } from './faritra/faritra.component';
     HomeComponent,
     KaominaComponent,
     DistrikaComponent,
-    FaritraComponent
+    FaritraComponent,
+    FaritanyComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { FaritraComponent } from './faritra/faritra.component';
       { path: 'kaomina', component: KaominaComponent },
       { path: 'distrika', component: DistrikaComponent },
       { path: 'faritra', component: FaritraComponent },
+      { path: 'faritany', component: FaritanyComponent },
     ])
   ],
   providers: [],
