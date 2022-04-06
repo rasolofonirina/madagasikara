@@ -9,6 +9,7 @@ import { FokontanyComponent } from './fokontany/fokontany.component';
 import { HomeComponent } from './home/home.component';
 import { KaominaComponent } from './kaomina/kaomina.component';
 import { DistrikaComponent } from './distrika/distrika.component';
+import { FaritraComponent } from './faritra/faritra.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DistrikaComponent } from './distrika/distrika.component';
     FokontanyComponent,
     HomeComponent,
     KaominaComponent,
-    DistrikaComponent
+    DistrikaComponent,
+    FaritraComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { DistrikaComponent } from './distrika/distrika.component';
       { path: 'fokontany', component: FokontanyComponent },
       { path: 'kaomina', component: KaominaComponent },
       { path: 'distrika', component: DistrikaComponent },
+      { path: 'faritra', component: FaritraComponent },
     ])
   ],
   providers: [],
